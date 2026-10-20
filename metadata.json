@@ -1,0 +1,6 @@
+{
+  "name": "Nocturne — Aura Liquid Glass Music Player",
+  "description": "A native HTML5, CSS3, and Vanilla JavaScript high-resolution spatial music player featuring an interactive 3D SVG liquid glass refraction lens, Web Audio API synthesizer, and 5-band parametric equalizer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

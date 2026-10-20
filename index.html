@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Nocturne — Aura Liquid Glass Music Player</title>
+    <meta
+      name="description"
+      content="A native HTML5, CSS3, and Vanilla JavaScript high-resolution spatial music player featuring an interactive 3D SVG liquid glass refraction lens, Web Audio API synthesizer, and 5-band parametric equalizer."
+    />
+    <meta property="og:title" content="Nocturne — Aura Liquid Glass Music Player" />
+    <meta
+      property="og:description"
+      content="A native HTML5, CSS3, and Vanilla JavaScript high-resolution spatial music player featuring an interactive 3D SVG liquid glass refraction lens, Web Audio API synthesizer, and 5-band parametric equalizer."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" href="/icon-192.png" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body class="bg-slate-950 text-white h-[100dvh] w-full overflow-hidden flex flex-col select-none">
+    <!-- Native SVG Liquid Refraction Filter Engine -->
+    <svg class="absolute w-0 h-0 invisible pointer-events-none" aria-hidden="true">
+      <defs>
+        <filter id="liquidRefractionFilter" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence
+            id="svgTurbulence"
+            type="fractalNoise"
+            baseFrequency="0.0315"
+            numOctaves="2"
+            result="noise"
+          >
+            <animate
+              id="svgTurbulenceAnim"
+              attributeName="baseFrequency"
+              dur="8s"
+              values="0.026;0.038;0.026"
+              repeatCount="indefinite"
+            />
+          </feTurbulence>
+          <feDisplacementMap
+            id="svgDisplacement"
+            in="SourceGraphic"
+            in2="noise"
+            scale="15.4"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displaced"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Hidden File Input for Local Audio Import -->
+    <input
+      id="localAudioInput"
+      type="file"
+      accept="audio/*"
+      multiple
+      class="hidden"
+      aria-label="Import local audio file"
+    />
+
+    <!-- Root Application Container (Populated & Controlled by Native Vanilla JS) -->
+    <div id="nocturneApp" class="relative w-full h-[100dvh] flex flex-col overflow-hidden"></div>
+
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>

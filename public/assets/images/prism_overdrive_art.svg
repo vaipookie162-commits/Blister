@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22" />
+      <stop offset="45%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <radialGradient id="emeraldGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#14b8a6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="prismFace1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.25" />
+    </linearGradient>
+    <linearGradient id="prismFace2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0.15" />
+    </linearGradient>
+    <linearGradient id="beam" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#34d399" stop-opacity="0.8" />
+      <stop offset="65%" stop-color="#22d3ee" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)" />
+  <circle cx="400" cy="380" r="360" fill="url(#emeraldGlow)" />
+  <!-- Geometric perspective grid -->
+  <g stroke="#10b981" stroke-opacity="0.18" stroke-width="1.5" fill="none">
+    <circle cx="400" cy="400" r="280" />
+    <circle cx="400" cy="400" r="210" />
+    <circle cx="400" cy="400" r="140" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="800" />
+  </g>
+  <!-- Incoming light ray -->
+  <polygon points="0,460 320,380 320,396 0,485" fill="#ffffff" opacity="0.75" />
+  <!-- Dispersed spectrum rays -->
+  <polygon points="465,355 800,240 800,320 480,395" fill="url(#beam)" />
+  <polygon points="475,385 800,340 800,430 485,425" fill="#34d399" opacity="0.45" />
+  <polygon points="480,415 800,450 800,540 470,450" fill="#38bdf8" opacity="0.4" />
+  <!-- Crystal Prism -->
+  <polygon points="400,175 230,545 400,605" fill="url(#prismFace1)" stroke="#a7f3d0" stroke-width="2.5" />
+  <polygon points="400,175 570,545 400,605" fill="url(#prismFace2)" stroke="#5eead4" stroke-width="2.5" />
+  <polygon points="230,545 570,545 400,605" fill="#047857" fill-opacity="0.45" stroke="#6ee7b7" stroke-width="2" />
+  <!-- Specular highlights -->
+  <circle cx="400" cy="175" r="6" fill="#ffffff" />
+  <circle cx="345" cy="365" r="85" fill="#ffffff" fill-opacity="0.08" />
+</svg>
